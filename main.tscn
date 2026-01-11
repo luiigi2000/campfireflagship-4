@@ -1,15 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7vsqtwwtlhlu"]
 
-[ext_resource type="PackedScene" uid="uid://bssnhm63l7ni1" path="res://level_1.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://c73rdsya7lhse" path="res://main.gd" id="1_0xm2m"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_0xm2m"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_0xm2m")
 
 [node name="Goal" type="MeshInstance2D" parent="."]
 position = Vector2(523, 49)
 scale = Vector2(100, 100)
 mesh = SubResource("QuadMesh_0xm2m")
-
-[node name="level1" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(147, 272)
