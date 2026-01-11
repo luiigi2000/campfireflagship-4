@@ -1,80 +1,80 @@
 [gd_scene load_steps=5 format=3 uid="uid://bssnhm63l7ni1"]
 
-[ext_resource type="Script" uid="uid://b2smg5i5c8j0l" path="res://level_1.gd" id="1_hbghi"]
-[ext_resource type="Texture2D" uid="uid://dt6xgq8w3vtlb" path="res://icon.svg" id="2_hn12h"]
-[ext_resource type="AudioStream" uid="uid://doo8j58b4a2f5" path="res://Audio/Scene1/d#.mp3" id="3_ihfcg"]
-[ext_resource type="AudioStream" uid="uid://dgrtslj88w1k3" path="res://Audio/Scene1/e.mp3" id="4_rka8t"]
+[ext_resource type="Script" uid="uid://b2smg5i5c8j0l" path="res://Scripts/level_1.gd" id="1_7p6j4"]
+[ext_resource type="Texture2D" uid="uid://dt6xgq8w3vtlb" path="res://icon.svg" id="2_6444e"]
+[ext_resource type="AudioStream" uid="uid://doo8j58b4a2f5" path="res://Audio/Scene1/d#.mp3" id="3_evi0p"]
+[ext_resource type="AudioStream" uid="uid://dgrtslj88w1k3" path="res://Audio/Scene1/e.mp3" id="4_lsmp6"]
 
 [node name="level1" type="Node2D"]
 position = Vector2(149, 280)
-script = ExtResource("1_hbghi")
+script = ExtResource("1_7p6j4")
 
 [node name="PianoKeys" type="Node2D" parent="."]
 
-[node name="Key" type="Button" parent="PianoKeys"]
+[node name="Key" type="Button" parent="PianoKeys" groups=["Buttons"]]
 offset_left = -65.0
 offset_top = -64.0
 offset_right = 71.0
 offset_bottom = 72.0
-icon = ExtResource("2_hn12h")
+icon = ExtResource("2_6444e")
 
 [node name="KeyAudio" type="AudioStreamPlayer2D" parent="PianoKeys/Key"]
-stream = ExtResource("3_ihfcg")
+stream = ExtResource("3_evi0p")
 
-[node name="Key2" type="Button" parent="PianoKeys"]
+[node name="Key2" type="Button" parent="PianoKeys" groups=["Buttons"]]
 offset_left = 78.0
 offset_top = -62.0
 offset_right = 214.0
 offset_bottom = 74.0
-icon = ExtResource("2_hn12h")
+icon = ExtResource("2_6444e")
 
 [node name="Key2Audio" type="AudioStreamPlayer2D" parent="PianoKeys/Key2"]
 position = Vector2(-143, -2)
-stream = ExtResource("4_rka8t")
+stream = ExtResource("4_lsmp6")
 
-[node name="Key3" type="Button" parent="PianoKeys"]
+[node name="Key3" type="Button" parent="PianoKeys" groups=["Buttons"]]
 offset_left = 231.0
 offset_top = -62.0
 offset_right = 367.0
 offset_bottom = 74.0
-icon = ExtResource("2_hn12h")
+icon = ExtResource("2_6444e")
 
 [node name="Key3Audio" type="AudioStreamPlayer2D" parent="PianoKeys/Key3"]
 position = Vector2(-296, -2)
-stream = ExtResource("3_ihfcg")
+stream = ExtResource("3_evi0p")
 
-[node name="Key4" type="Button" parent="PianoKeys"]
+[node name="Key4" type="Button" parent="PianoKeys" groups=["Buttons"]]
 offset_left = 381.0
 offset_top = -61.0
 offset_right = 517.0
 offset_bottom = 75.0
-icon = ExtResource("2_hn12h")
+icon = ExtResource("2_6444e")
 
 [node name="Key4Audio" type="AudioStreamPlayer2D" parent="PianoKeys/Key4"]
 position = Vector2(-446, -3)
-stream = ExtResource("4_rka8t")
+stream = ExtResource("4_lsmp6")
 
-[node name="Key5" type="Button" parent="PianoKeys"]
+[node name="Key5" type="Button" parent="PianoKeys" groups=["Buttons"]]
 offset_left = 534.0
 offset_top = -62.0
 offset_right = 670.0
 offset_bottom = 74.0
-icon = ExtResource("2_hn12h")
+icon = ExtResource("2_6444e")
 
 [node name="Key5Audio" type="AudioStreamPlayer2D" parent="PianoKeys/Key5"]
 position = Vector2(-599, -2)
-stream = ExtResource("3_ihfcg")
+stream = ExtResource("3_evi0p")
 
-[node name="Key6" type="Button" parent="PianoKeys"]
+[node name="Key6" type="Button" parent="PianoKeys" groups=["Buttons"]]
 offset_left = 701.0
 offset_top = -64.0
 offset_right = 837.0
 offset_bottom = 72.0
-icon = ExtResource("2_hn12h")
+icon = ExtResource("2_6444e")
 
 [node name="Key6Audio" type="AudioStreamPlayer2D" parent="PianoKeys/Key6"]
 position = Vector2(-766, 0)
-stream = ExtResource("4_rka8t")
+stream = ExtResource("4_lsmp6")
 
 [connection signal="pressed" from="PianoKeys/Key" to="." method="_on_string_pressed"]
 [connection signal="pressed" from="PianoKeys/Key2" to="." method="_on_string_2_pressed"]
