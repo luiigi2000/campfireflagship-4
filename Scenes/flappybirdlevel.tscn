@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://ces0dxjbemk54"]
+
+[ext_resource type="Script" uid="uid://c28ktb5xafskg" path="res://character_body_2d.gd" id="1_5ijq5"]
+[ext_resource type="Texture2D" uid="uid://cg0bqqbohc5em" path="res://Mouse/whitehandmove.png" id="2_b104m"]
+[ext_resource type="Texture2D" uid="uid://dt6xgq8w3vtlb" path="res://icon.svg" id="3_sqtdl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_js6hb"]
+size = Vector2(56, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh0b3"]
+
+[node name="flappybirdlevel" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(316, 72)
+script = ExtResource("1_5ijq5")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_b104m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_js6hb")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_js6hb")
+
+[node name="WallContainer" type="Node2D" parent="."]
+
+[node name="SpawnWallTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="Key" type="Area2D" parent="."]
+position = Vector2(1220, 324)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Key"]
+texture = ExtResource("3_sqtdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
+scale = Vector2(6.4, 6.5999994)
+shape = SubResource("RectangleShape2D_rh0b3")
+
+[connection signal="timeout" from="SpawnWallTimer" to="Player" method="_on_spawn_wall_timer_timeout"]

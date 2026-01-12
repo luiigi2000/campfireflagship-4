@@ -3,12 +3,18 @@ extends Node2D
 var current_sequence = []
 var all_notes = [preload("res://Audio/Scene1/a.wav"),preload("res://Audio/Scene1/b.wav"),preload("res://Audio/Scene1/c.wav"),preload("res://Audio/Scene1/d.wav"),preload("res://Audio/Scene1/d#.mp3"),preload("res://Audio/Scene1/e.mp3")]
 var correct_sequence = [all_notes[5],all_notes[4],all_notes[5],all_notes[4],all_notes[5],all_notes[1],all_notes[3],all_notes[2],all_notes[0]] 
+var all_same_notes = [all_notes[5],all_notes[5],all_notes[5],all_notes[5],all_notes[5],all_notes[5]]
+var all_same_notes_debounce = true
+
 func _ready() -> void:
+	hover_to_functions()
+	assign_note_sequence()
+	
+
+func hover_to_functions():
 	for button in get_tree().get_nodes_in_group("Buttons"):
 		button.connect("mouse_entered", Callable(self, "_on_button_hover"))
 		button.connect("mouse_exited", Callable(self, "_on_button_exit"))
-
-	assign_note_sequence()
 
 func _on_string_pressed() -> void:
 	play_key($PianoKeys/Key/KeyAudio)
@@ -45,23 +51,27 @@ func assign_note_sequence():
 	for key in randomized_keys:
 		key.get_node(key.name+"Audio").stream = all_notes[index]
 		index += 1
-	
+var count = 0
 func check_sequence(piano_note):
+	if all_same_notes_debounce:
+		correct_sequence = all_same_notes
 	var sequence_correct := true
 	current_sequence.push_back(piano_note.stream)
 	for note_index in current_sequence.size():
 		if current_sequence[note_index] != correct_sequence[note_index]:
 			sequence_correct = false
 			current_sequence = []
-		
+			
+	if sequence_correct:
+		print(count)
+		count+=1
 	if current_sequence.size() != correct_sequence.size():
 		sequence_correct = false
 	if sequence_correct:
-		$"../Goal".modulate = Color.GREEN
+		Global.goal.modulate = Color.GREEN
 		current_sequence = []
-		Main.state = Main.level.level2
-		Main.change_level()
-		queue_free()
+		Global.state = Global.level.level2
+		Global.change_level(false)
 		
 func _on_button_hover():
 	# button is the one hovered

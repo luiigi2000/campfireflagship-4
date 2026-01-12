@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7vsqtwwtlhlu"]
 
-[ext_resource type="Script" uid="uid://c73rdsya7lhse" path="res://Scripts/main.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://caq75bmjh53ks" path="res://Scenes/main.gd" id="1_jjgbg"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_0xm2m"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_0xm2m")
+script = ExtResource("1_jjgbg")
 
 [node name="Goal" type="MeshInstance2D" parent="."]
 position = Vector2(523, 49)
