@@ -9,7 +9,6 @@ var key_spawned_debounce = false
 func _ready() -> void:
 	get_tree().paused = false
 	print("BEGGINING")
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$"../SpawnWallTimer".start()
 	await get_tree().create_timer(15).timeout
 	key_spawned_debounce = true
@@ -32,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("geo_jump"):
 		velocity.y = JUMP_VELOCITY
 		$Sprite2D.texture = preload("res://Mouse/whitehandhover.png")
 		await get_tree().create_timer(1).timeout

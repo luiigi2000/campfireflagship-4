@@ -11,6 +11,7 @@ position = Vector2(576, 324)
 texture = ExtResource("2_fakcf")
 
 [node name="Back" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 316.0
 offset_top = 195.0
 offset_right = 324.0
@@ -18,6 +19,7 @@ offset_bottom = 203.0
 scale = Vector2(18.822964, 17.84665)
 
 [node name="Next" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 630.0
 offset_top = 197.0
 offset_right = 638.0

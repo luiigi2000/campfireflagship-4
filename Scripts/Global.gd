@@ -19,7 +19,6 @@ func _physics_process(_delta: float) -> void:
 		await get_tree().create_timer(.1).timeout
 		
 func change_level(reset_scene = false):
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	if is_instance_valid(level_child):
 		level_child.queue_free()
 		if not levels_owned.has(level.keys()[state]):
@@ -38,3 +37,9 @@ func level_cleared():
 	level_child.queue_free()
 	level_child = preload("res://level_cleared.tscn").instantiate()
 	add_child(level_child)
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.is_action_pressed("open_level_selector"):
+			print("E")
+			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)

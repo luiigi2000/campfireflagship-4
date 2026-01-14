@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://yxal8igc63m1"]
+[gd_scene load_steps=4 format=3 uid="uid://yxal8igc63m1"]
 
 [ext_resource type="Script" uid="uid://daotnbkc7mh5p" path="res://Scripts/level_selector.gd" id="1_22lal"]
 [ext_resource type="Texture2D" uid="uid://trycnqmkkf11" path="res://images/Background/select_level_screen.png" id="2_x3xpc"]
+[ext_resource type="Texture2D" uid="uid://ct7p7r8gs3umi" path="res://images/Background/lock.png" id="3_yk0gq"]
 
 [node name="level_selector" type="Node2D"]
 script = ExtResource("1_22lal")
@@ -20,6 +21,13 @@ offset_right = 353.0
 offset_bottom = 284.0
 scale = Vector2(8.588167, 8.837908)
 
+[node name="Lock" type="Sprite2D" parent="levels/level1"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.7764706)
+position = Vector2(4.0753784, 3.9602146)
+scale = Vector2(0.11643928, 0.11314896)
+texture = ExtResource("3_yk0gq")
+
 [node name="level2" type="Button" parent="levels"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 419.0
@@ -27,6 +35,13 @@ offset_top = 276.00003
 offset_right = 427.0
 offset_bottom = 284.00003
 scale = Vector2(8.588167, 8.837908)
+
+[node name="Lock" type="Sprite2D" parent="levels/level2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.7764706)
+position = Vector2(4.0753765, 3.9602108)
+scale = Vector2(0.11643928, 0.11314896)
+texture = ExtResource("3_yk0gq")
 
 [node name="level3" type="Button" parent="levels"]
 self_modulate = Color(1, 1, 1, 0)
@@ -36,6 +51,13 @@ offset_right = 501.0
 offset_bottom = 285.00003
 scale = Vector2(8.588167, 8.837908)
 
+[node name="Lock" type="Sprite2D" parent="levels/level3"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.7764706)
+position = Vector2(4.0753746, 3.8470562)
+scale = Vector2(0.11643928, 0.11314896)
+texture = ExtResource("3_yk0gq")
+
 [node name="level4" type="Button" parent="levels"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 568.0
@@ -43,6 +65,13 @@ offset_top = 276.0
 offset_right = 576.0
 offset_bottom = 284.0
 scale = Vector2(8.588167, 8.837908)
+
+[node name="Lock" type="Sprite2D" parent="levels/level4"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.7764706)
+position = Vector2(4.0753736, 3.9602115)
+scale = Vector2(0.11643928, 0.11314896)
+texture = ExtResource("3_yk0gq")
 
 [node name="level5" type="Button" parent="levels"]
 self_modulate = Color(1, 1, 1, 0)
@@ -52,6 +81,13 @@ offset_right = 649.0
 offset_bottom = 284.00003
 scale = Vector2(8.588167, 8.837908)
 
+[node name="Lock" type="Sprite2D" parent="levels/level5"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.7764706)
+position = Vector2(4.191812, 3.960211)
+scale = Vector2(0.11643928, 0.11314896)
+texture = ExtResource("3_yk0gq")
+
 [node name="level6" type="Button" parent="levels"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 717.0
@@ -59,3 +95,10 @@ offset_top = 277.00003
 offset_right = 725.0
 offset_bottom = 285.00003
 scale = Vector2(8.588167, 8.837908)
+
+[node name="Lock" type="Sprite2D" parent="levels/level6"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.7764706)
+position = Vector2(3.9589338, 3.84706)
+scale = Vector2(0.11643928, 0.11314896)
+texture = ExtResource("3_yk0gq")
