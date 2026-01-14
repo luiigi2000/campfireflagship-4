@@ -67,7 +67,6 @@ func check_sequence(piano_note):
 	if current_sequence.size() != correct_sequence.size():
 		sequence_correct = false
 	if sequence_correct:
-		Global.goal.modulate = Color.GREEN
 		current_sequence = []
 		Global.state = Global.level.level2
 		Global.change_level()

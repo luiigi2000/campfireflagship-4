@@ -17,6 +17,9 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if position.y <= 0 or position.y >= get_viewport_rect().size.y:
+		call_deferred("_reload_scene")
+	
 	if key_spawned_debounce:
 		$"../Key".position.x -= 1
 	for wall in walls:

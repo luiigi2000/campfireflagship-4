@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://yxal8igc63m1"]
+
+[ext_resource type="Script" uid="uid://daotnbkc7mh5p" path="res://Scripts/level_selector.gd" id="1_22lal"]
+[ext_resource type="Texture2D" uid="uid://trycnqmkkf11" path="res://images/Background/select_level_screen.png" id="2_x3xpc"]
+
+[node name="level_selector" type="Node2D"]
+script = ExtResource("1_22lal")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 329)
+texture = ExtResource("2_x3xpc")
+
+[node name="levels" type="Node2D" parent="."]
+
+[node name="level1" type="Button" parent="levels"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 345.0
+offset_top = 276.0
+offset_right = 353.0
+offset_bottom = 284.0
+scale = Vector2(8.588167, 8.837908)
+
+[node name="level2" type="Button" parent="levels"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 419.0
+offset_top = 276.00003
+offset_right = 427.0
+offset_bottom = 284.00003
+scale = Vector2(8.588167, 8.837908)
+
+[node name="level3" type="Button" parent="levels"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 493.0
+offset_top = 277.00003
+offset_right = 501.0
+offset_bottom = 285.00003
+scale = Vector2(8.588167, 8.837908)
+
+[node name="level4" type="Button" parent="levels"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 568.0
+offset_top = 276.0
+offset_right = 576.0
+offset_bottom = 284.0
+scale = Vector2(8.588167, 8.837908)
+
+[node name="level5" type="Button" parent="levels"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 641.0
+offset_top = 276.00003
+offset_right = 649.0
+offset_bottom = 284.00003
+scale = Vector2(8.588167, 8.837908)
+
+[node name="level6" type="Button" parent="levels"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 717.0
+offset_top = 277.00003
+offset_right = 725.0
+offset_bottom = 285.00003
+scale = Vector2(8.588167, 8.837908)
