@@ -46,3 +46,4 @@ scale = Vector2(6.4, 6.5999994)
 shape = SubResource("RectangleShape2D_rh0b3")
 
 [connection signal="timeout" from="SpawnWallTimer" to="Player" method="_on_spawn_wall_timer_timeout"]
+[connection signal="body_entered" from="Key" to="Player" method="_on_key_body_entered"]

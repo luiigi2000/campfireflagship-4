@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxpvukm31751d"]
+
+[ext_resource type="Script" uid="uid://cren72otefws3" path="res://Scripts/gun_level.gd" id="1_0ls67"]
+[ext_resource type="Texture2D" uid="uid://cg0bqqbohc5em" path="res://Mouse/whitehandmove.png" id="2_1gqjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4rb7"]
+size = Vector2(59, 68)
+
+[node name="gun_level" type="Node2D"]
+script = ExtResource("1_0ls67")
+
+[node name="Mouse" type="Sprite2D" parent="."]
+texture = ExtResource("2_1gqjw")
+
+[node name="Area2D" type="Area2D" parent="Mouse"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse/Area2D"]
+position = Vector2(-1.5, 1)
+shape = SubResource("RectangleShape2D_c4rb7")

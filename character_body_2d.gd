@@ -11,7 +11,7 @@ func _ready() -> void:
 	print("BEGGINING")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$"../SpawnWallTimer".start()
-	#await get_tree().create_timer(25).timeout
+	await get_tree().create_timer(15).timeout
 	key_spawned_debounce = true
 	
 	
@@ -70,11 +70,10 @@ func _on_spawn_wall_timer_timeout() -> void:
 func _on_key_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		Global.state = Global.level.level3
-		get_parent().queue_free()
+		Global.change_level()
 		
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body)
 	if body.name != "Player":
 		return 
 	call_deferred("_reload_scene")
