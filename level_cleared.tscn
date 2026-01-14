@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm8poeiue20p2"]
+
+[ext_resource type="Script" uid="uid://y12kcv3222pt" path="res://level_cleared.gd" id="1_retk2"]
+[ext_resource type="Texture2D" uid="uid://c1onldi02ehfr" path="res://images/Background/levelclearedscreen.png" id="2_fakcf"]
+
+[node name="level_cleared" type="Node2D"]
+script = ExtResource("1_retk2")
+
+[node name="BackGround" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_fakcf")
+
+[node name="Back" type="Button" parent="."]
+offset_left = 316.0
+offset_top = 195.0
+offset_right = 324.0
+offset_bottom = 203.0
+scale = Vector2(18.822964, 17.84665)
+
+[node name="Next" type="Button" parent="."]
+offset_left = 630.0
+offset_top = 197.0
+offset_right = 638.0
+offset_bottom = 205.0
+scale = Vector2(18.822964, 17.84665)
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

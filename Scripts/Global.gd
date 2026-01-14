@@ -1,7 +1,8 @@
 extends Node2D
 #ADD ANOTHER PARAMETER TO LEVEL SELECT AND CHANGE THE LEVEL THERE INSTEAD, ALSO ADD A NEXT LEVEL SCREEN
-enum level {level_select,level1,level2,level3,level4}
+enum level {level_select,next_level,level1,level2,level3,level4}
 @onready var state = level.level_select
+var levels_owned = [level.keys()[level.level1]]
 var level_child
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +22,8 @@ func change_level(reset_scene = false):
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	if is_instance_valid(level_child):
 		level_child.queue_free()
-		
+		if not levels_owned.has(level.keys()[state]):
+			levels_owned.append(level.keys()[state])	
 	if state == level.level_select:
 		level_child = preload("res://Scenes/level_selector.tscn").instantiate()
 	elif state == level.level1:
@@ -30,4 +32,9 @@ func change_level(reset_scene = false):
 		level_child = preload("res://Scenes/flappybirdlevel.tscn").instantiate()
 	elif state == level.level3:
 		level_child = preload("res://Scenes/gun_level.tscn").instantiate()
+	add_child(level_child)
+	
+func level_cleared():
+	level_child.queue_free()
+	level_child = preload("res://level_cleared.tscn").instantiate()
 	add_child(level_child)

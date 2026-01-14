@@ -72,8 +72,7 @@ func _on_spawn_wall_timer_timeout() -> void:
 
 func _on_key_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		Global.state = Global.level.level3
-		Global.change_level()
+		Global.level_cleared()
 		
 		
 func _on_area_2d_body_entered(body: Node2D) -> void:

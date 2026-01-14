@@ -64,12 +64,12 @@ func check_sequence(piano_note):
 			
 	if sequence_correct:
 		count+=1
+		print(count)
 	if current_sequence.size() != correct_sequence.size():
 		sequence_correct = false
 	if sequence_correct:
 		current_sequence = []
-		Global.state = Global.level.level2
-		Global.change_level()
+		Global.level_cleared()
 		
 func _on_button_hover():
 	# button is the one hovered
