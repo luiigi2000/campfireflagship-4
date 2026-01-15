@@ -62,7 +62,7 @@ func check_sequence(piano_note):
 			sequence_correct = false
 			current_sequence = []
 			
-	if sequence_correct:
+	if sequence_correct and all_same_notes_debounce:
 		count+=1
 		print(count)
 	if current_sequence.size() != correct_sequence.size():

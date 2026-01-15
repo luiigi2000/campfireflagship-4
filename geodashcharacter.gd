@@ -71,6 +71,7 @@ func _on_spawn_wall_timer_timeout() -> void:
 
 func _on_key_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		Global.level_cleared()
 		
 		

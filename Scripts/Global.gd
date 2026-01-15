@@ -20,9 +20,7 @@ func _physics_process(_delta: float) -> void:
 		
 func change_level(reset_scene = false):
 	if is_instance_valid(level_child):
-		level_child.queue_free()
-		if not levels_owned.has(level.keys()[state]):
-			levels_owned.append(level.keys()[state])	
+		level_child.queue_free()	
 	if state == level.level_select:
 		level_child = preload("res://Scenes/level_selector.tscn").instantiate()
 	elif state == level.level1:
@@ -30,6 +28,7 @@ func change_level(reset_scene = false):
 	elif state == level.level2:
 		level_child = preload("res://Scenes/flappybirdlevel.tscn").instantiate()
 	elif state == level.level3:
+		Input.set_custom_mouse_cursor(preload("res://Mouse/1pixmouse.png"))
 		level_child = preload("res://Scenes/gun_level.tscn").instantiate()
 	add_child(level_child)
 	
@@ -41,5 +40,9 @@ func level_cleared():
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.is_action_pressed("open_level_selector"):
-			print("E")
-			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event is InputEventMouseButton  and event.pressed:
+		if state == level.level2:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
