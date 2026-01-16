@@ -1,15 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxpvukm31751d"]
+[gd_scene load_steps=9 format=3 uid="uid://bxpvukm31751d"]
 
 [ext_resource type="Script" uid="uid://cren72otefws3" path="res://Scripts/gun_level.gd" id="1_0ls67"]
 [ext_resource type="Texture2D" uid="uid://cg0bqqbohc5em" path="res://Mouse/whitehandmove.png" id="2_1gqjw"]
+[ext_resource type="Texture2D" uid="uid://bhb4op5k8wwbu" path="res://Mouse/forwardhand.png" id="3_2tgpb"]
+[ext_resource type="Script" uid="uid://8rbuw8uhbkf" path="res://gun.gd" id="4_02pis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4rb7"]
 size = Vector2(59, 68)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqc3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1gqjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2tgpb")
+}],
+"loop": false,
+"name": &"Shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="QuadMesh" id="QuadMesh_o1hkx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpxk4"]
+size = Vector2(54, 65)
+
 [node name="gun_level" type="Node2D"]
 script = ExtResource("1_0ls67")
 metadata/guns_shot = 0
-metadata/total_shots = 3
+metadata/total_shots = 20
 
 [node name="Mouse" type="Sprite2D" parent="."]
 texture = ExtResource("2_1gqjw")
@@ -19,3 +40,30 @@ texture = ExtResource("2_1gqjw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse/Area2D"]
 position = Vector2(-1.5, 1)
 shape = SubResource("RectangleShape2D_c4rb7")
+
+[node name="GunAnimation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hqc3b")
+animation = &"Shoot"
+speed_scale = 0.5
+script = ExtResource("4_02pis")
+
+[node name="Bullet" type="MeshInstance2D" parent="GunAnimation"]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(1.999999, -573)
+scale = Vector2(30, 1152)
+mesh = SubResource("QuadMesh_o1hkx")
+
+[node name="RayCast" type="RayCast2D" parent="GunAnimation"]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(2, 3)
+rotation = -3.1415925
+scale = Vector2(20, 1152)
+enabled = false
+collide_with_areas = true
+
+[node name="GunArea" type="Area2D" parent="GunAnimation"]
+
+[node name="Collider" type="CollisionShape2D" parent="GunAnimation/GunArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_dpxk4")

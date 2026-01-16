@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbnu2osmlkm1e"]
+[gd_scene load_steps=7 format=3 uid="uid://cbnu2osmlkm1e"]
 
 [ext_resource type="Texture2D" uid="uid://cg0bqqbohc5em" path="res://Mouse/whitehandmove.png" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://bhb4op5k8wwbu" path="res://Mouse/forwardhand.png" id="2_dk5gl"]
@@ -19,6 +19,9 @@ animations = [{
 }]
 
 [sub_resource type="QuadMesh" id="QuadMesh_kw0bs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw0bs"]
+size = Vector2(54, 65)
 
 [node name="Gun" type="Node2D"]
 
@@ -43,3 +46,9 @@ rotation = -3.1415925
 scale = Vector2(20, 1152)
 enabled = false
 collide_with_areas = true
+
+[node name="GunArea" type="Area2D" parent="GunAnimation"]
+
+[node name="Collider" type="CollisionShape2D" parent="GunAnimation/GunArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_kw0bs")

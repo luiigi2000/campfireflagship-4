@@ -6,13 +6,15 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_7rcke"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pn5pm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pn5pm"]
+size = Vector2(50.324993, 59.948364)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgrsr"]
 
 [node name="KeyIntheDarkLevel" type="Node2D"]
 scale = Vector2(1.0134131, 1.0008613)
 script = ExtResource("1_7rcke")
+total_keys = 4
 
 [node name="BackGround" type="MeshInstance2D" parent="."]
 modulate = Color(0.21230483, 0.21230483, 0.21230483, 1)
@@ -22,41 +24,21 @@ scale = Vector2(1152, 648)
 mesh = SubResource("QuadMesh_7rcke")
 
 [node name="Keys" type="Node2D" parent="."]
-scale = Vector2(0.5570079, 0.9992308)
 
 [node name="Key1" type="StaticBody2D" parent="Keys"]
-position = Vector2(230, 261)
+position = Vector2(124.33232, 264.77197)
+scale = Vector2(0.2, 0.2)
 
 [node name="Image" type="Sprite2D" parent="Keys/Key1"]
-scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_fgrsr")
 
 [node name="Collider" type="CollisionShape2D" parent="Keys/Key1"]
-shape = SubResource("CircleShape2D_pn5pm")
-
-[node name="Key2" type="StaticBody2D" parent="Keys"]
-position = Vector2(756.44965, 159.98538)
-
-[node name="Image" type="Sprite2D" parent="Keys/Key2"]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_fgrsr")
-
-[node name="Collider" type="CollisionShape2D" parent="Keys/Key2"]
-shape = SubResource("CircleShape2D_pn5pm")
-
-[node name="Key3" type="StaticBody2D" parent="Keys"]
-position = Vector2(875.1431, 306.97192)
-
-[node name="Image" type="Sprite2D" parent="Keys/Key3"]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_fgrsr")
-
-[node name="Collider" type="CollisionShape2D" parent="Keys/Key3"]
-shape = SubResource("CircleShape2D_pn5pm")
+position = Vector2(-0.49338531, -3.0517578e-05)
+shape = SubResource("RectangleShape2D_pn5pm")
 
 [node name="Light" type="PointLight2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(234, 267)
+position = Vector2(576, 324)
 scale = Vector2(0.3, 0.3)
 energy = 16.0
 texture = ExtResource("2_pn5pm")

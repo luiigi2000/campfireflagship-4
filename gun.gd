@@ -6,6 +6,7 @@ var has_shot_gun = false
 var target_position
 @onready var raycast = $RayCast
 var rotation_target
+@onready var parent = get_parent().get_parent()
 
 func _ready() -> void:
 	target_position = get_global_mouse_position()
@@ -21,8 +22,14 @@ func _physics_process(delta: float) -> void:
 
 	elif not has_shot_gun:
 		shoot_gun()
-	if raycast.is_colliding():
-		Global.change_level(true)
+	if raycast.is_colliding() and raycast.get_collider() != null:
+		if raycast.get_collider().name != "GunArea":
+			#end level
+			Global.change_level(true)
+		else:
+			#destroy gun hit
+			change_bullet_meta()
+			raycast.get_collider().get_parent().queue_free()
 		
 		
 
@@ -37,9 +44,14 @@ func shoot_gun():
 	play()
 	add_bullet()
 	await get_tree().create_timer(2).timeout
-	var parent = get_parent().get_parent()
-	parent.set_meta("guns_shots",parent.get_meta("guns_shot")+1) 
-	get_parent().queue_free()
+	change_bullet_meta()
+	queue_free()
 	
 func add_bullet():
 	$Bullet.visible = true
+	
+func change_bullet_meta():
+	if parent != null and parent.has_meta("guns_shot"):
+		var shots = parent.get_meta("guns_shot")
+		parent.set_meta("guns_shot",shots+1)
+	#NOT WORKING

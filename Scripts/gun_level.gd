@@ -1,7 +1,9 @@
 extends Node2D
 
-
+#make it so you can destroy hands by making them shoot at eachother
 # Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	var total_shots = get_meta("total_shots")
