@@ -1,7 +1,7 @@
 extends Node2D
 #ADD ANOTHER PARAMETER TO LEVEL SELECT AND CHANGE THE LEVEL THERE INSTEAD, ALSO ADD A NEXT LEVEL SCREEN
 enum level {level_select,next_level,level1,level2,level3,level4,level5}
-@onready var state = level.level3
+@onready var state = level.level_select
 var levels_owned = [level.keys()[level.level1]]
 var level_child
 # Called when the node enters the scene tree for the first time.

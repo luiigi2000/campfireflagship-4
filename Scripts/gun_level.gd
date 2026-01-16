@@ -8,10 +8,11 @@ var all_guns_have_spawned = false
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
-	total_guns-=1
+	var gun_obj = $Guns/Gun.duplicate()
+	$Guns/Gun.queue_free()
 	for i in range(total_guns):
-		await get_tree().create_timer(randf_range(0,1)).timeout
-		var gun = $Guns/Gun.duplicate()
+		await get_tree().create_timer(randf_range(.5,1)).timeout
+		var gun = gun_obj.duplicate()
 		$Guns.add_child(gun)
 	all_guns_have_spawned = true
 	
@@ -20,7 +21,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Mouse.position = get_global_mouse_position()
-	print($Guns.get_child_count())
 	if all_guns_have_spawned and $Guns.get_child_count() == 0:
 		end_level()
 		

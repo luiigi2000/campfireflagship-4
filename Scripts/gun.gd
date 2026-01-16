@@ -17,11 +17,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	rotation = rotation_target
-	if position.x < gun_size.x or position.y < gun_size.y or position.x > get_viewport_rect().size.x+gun_size.x or position.y > get_viewport_rect().size.y-gun_size.y:
+	if position.x < gun_size.x/2 or position.y < gun_size.y/2 or position.x > get_viewport_rect().size.x+gun_size.x/2 or position.y > get_viewport_rect().size.y-gun_size.y/2:
 		position = position.move_toward(target_position, 1)
-
 	elif not has_shot_gun:
 		shoot_gun()
+		
 	if raycast.is_colliding() and raycast.get_collider() != null:
 		if raycast.get_collider().name != "GunArea":
 			#end level
@@ -37,11 +37,12 @@ func spawn_shooter():
 	position = spawn_position
 	
 func shoot_gun():
+	print("SHOT")
 	has_shot_gun = true
 	await get_tree().create_timer(2).timeout
-	raycast.enabled = true
 	play()
 	add_bullet()
+	raycast.enabled = true
 	await get_tree().create_timer(2).timeout
 	queue_free()
 	
