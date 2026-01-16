@@ -37,6 +37,8 @@ func shoot_gun():
 	play()
 	add_bullet()
 	await get_tree().create_timer(2).timeout
+	var parent = get_parent().get_parent()
+	parent.set_meta("guns_shots",parent.get_meta("guns_shot")+1) 
 	get_parent().queue_free()
 	
 func add_bullet():

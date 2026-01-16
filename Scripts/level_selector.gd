@@ -9,7 +9,6 @@ func _ready() -> void:
 			button.connect("pressed",Callable(self,"_level_selected").bind(button))
 			button.get_node("Lock").visible = false
 		else:
-			print("A")
 			button.get_node("Lock").visible = true
 
 	
