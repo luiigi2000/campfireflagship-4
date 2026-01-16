@@ -33,10 +33,11 @@ func change_level(reset_scene = false):
 	elif state == level.level4:
 		level_child = preload("res://Scenes/key_inthe_dark_level.tscn").instantiate()
 	add_child(level_child)
+	display_level_info()
 	
 func level_cleared():
 	level_child.queue_free()
-	level_child = preload("res://level_cleared.tscn").instantiate()
+	level_child = preload("res://Scenes/level_cleared.tscn").instantiate()
 	add_child(level_child)
 	
 func _input(event: InputEvent) -> void:
@@ -49,3 +50,21 @@ func _input(event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			
+func display_level_info():
+	var level_info_scene = preload("res://Scenes/level_info.tscn").instantiate()
+	var label = level_info_scene.get_child(0).get_child(0)
+	if state == level.level1:
+		label.text = "Can you play Fur Elise?"
+	elif state == level.level2:
+		label.text = "PRESS SPACE NOW AHHHHHHHH"
+	elif state == level.level3:
+		label.text = "Are those... EVIL SHOOTING HANDS"
+	elif state == level.level4:
+		label.text = "Can you find all 5 keys?"
+	add_child(level_info_scene)
+	await get_tree().create_timer(2.5).timeout
+	var tween = get_tree().create_tween()
+	tween.tween_property(label, "modulate:a", 0.0, .5)
+	await tween.finished
+	level_info_scene.queue_free()

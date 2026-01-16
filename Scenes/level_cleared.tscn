@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://bm8poeiue20p2"]
 
-[ext_resource type="Script" uid="uid://y12kcv3222pt" path="res://level_cleared.gd" id="1_retk2"]
-[ext_resource type="Texture2D" uid="uid://c1onldi02ehfr" path="res://images/Background/levelclearedscreen.png" id="2_fakcf"]
+[ext_resource type="Script" uid="uid://y12kcv3222pt" path="res://Scripts/level_cleared.gd" id="1_hbvea"]
+[ext_resource type="Texture2D" uid="uid://0fyumei5pch6" path="res://images/Background/levelclearedscreen.png" id="2_aivfq"]
 
 [node name="level_cleared" type="Node2D"]
-script = ExtResource("1_retk2")
+script = ExtResource("1_hbvea")
 
 [node name="BackGround" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
-texture = ExtResource("2_fakcf")
+texture = ExtResource("2_aivfq")
 
 [node name="Back" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)

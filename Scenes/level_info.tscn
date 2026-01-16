@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dolgtk1mrudxt"]
+
+[ext_resource type="FontFile" uid="uid://xn0oxq3ndbt3" path="res://BoldPixels.ttf" id="1_d8b7j"]
+
+[node name="LevelInfo" type="Node2D"]
+visibility_layer = 3
+
+[node name="InfoContainer" type="CenterContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 362.0
+offset_right = 660.0
+offset_bottom = 136.0
+grow_horizontal = 2
+
+[node name="label" type="Label" parent="InfoContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d8b7j")
+theme_override_font_sizes/font_size = 66

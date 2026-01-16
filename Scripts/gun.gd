@@ -27,8 +27,7 @@ func _physics_process(delta: float) -> void:
 			#end level
 			Global.change_level(true)
 		else:
-			#destroy gun hit
-			change_bullet_meta()
+			raycast.get_collider().monitoring = false
 			raycast.get_collider().get_parent().queue_free()
 		
 		
@@ -44,14 +43,8 @@ func shoot_gun():
 	play()
 	add_bullet()
 	await get_tree().create_timer(2).timeout
-	change_bullet_meta()
 	queue_free()
 	
 func add_bullet():
 	$Bullet.visible = true
 	
-func change_bullet_meta():
-	if parent != null and parent.has_meta("guns_shot"):
-		var shots = parent.get_meta("guns_shot")
-		parent.set_meta("guns_shot",shots+1)
-	#NOT WORKING
