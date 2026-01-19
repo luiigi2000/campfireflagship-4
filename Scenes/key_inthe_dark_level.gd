@@ -39,7 +39,14 @@ func spawn_items():
 
 func _on_emmit_radars_timeout() -> void:
 	for key in $Keys.get_children():
-		var radar = key.get_child(2).get_child(0)
-		radar.position = key.position
+		var radar = key.get_child(2)
+		$CanvasModulate.remove_child(radar)
 		radar.play()
 	radar_timer.start()
+	await get_tree().create_timer(2).timeout
+	rotate_screen()
+	
+func rotate_screen():
+	for v in range(180):
+		await get_tree().create_timer(.01).timeout
+		$Camera2D.rotation += deg_to_rad(1)

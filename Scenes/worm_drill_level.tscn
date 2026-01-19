@@ -1,0 +1,333 @@
+[gd_scene load_steps=38 format=3 uid="uid://db3nsssnyqtso"]
+
+[ext_resource type="Script" uid="uid://bovmt7so7oc5w" path="res://Scenes/worm_drill_level.gd" id="1_hcfs8"]
+[ext_resource type="Texture2D" uid="uid://cmctxtwfqir70" path="res://images/Background/background.png" id="1_qvr3i"]
+[ext_resource type="Texture2D" uid="uid://d2nn4prgp5ald" path="res://images/LevelImages/WormLevel/wormstick-Sheet.png" id="2_hcfs8"]
+[ext_resource type="Texture2D" uid="uid://b0jein08k0tbh" path="res://images/LevelImages/WormLevel/wormview.png" id="4_r5ifx"]
+[ext_resource type="Texture2D" uid="uid://ldw3nger8jby" path="res://images/LevelImages/WormLevel/dirtburst-Sheet.png" id="5_7w0nd"]
+[ext_resource type="AudioStream" uid="uid://bqva0lxvraw4t" path="res://Audio/WormLevel/explosion-fx-425453.mp3" id="6_jbrf8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w0nd"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbrf8"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myu8k"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkt5i"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p50us"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_worfc"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkipa"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s63qd"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onjsu"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jprj2"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycogv"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlq12"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w51vm"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(1536, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qx8f"]
+atlas = ExtResource("2_hcfs8")
+region = Rect2(1664, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qx8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w0nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbrf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myu8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkt5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p50us")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_worfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkipa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s63qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onjsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jprj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycogv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlq12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w51vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qx8f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereMesh" id="SphereMesh_r5ifx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r5ifx"]
+radius = 0.559017
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6c21"]
+atlas = ExtResource("5_7w0nd")
+region = Rect2(0, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqhtm"]
+atlas = ExtResource("5_7w0nd")
+region = Rect2(40, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsml6"]
+atlas = ExtResource("5_7w0nd")
+region = Rect2(80, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g4tx"]
+atlas = ExtResource("5_7w0nd")
+region = Rect2(120, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjm05"]
+atlas = ExtResource("5_7w0nd")
+region = Rect2(160, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga7ui"]
+atlas = ExtResource("5_7w0nd")
+region = Rect2(200, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28etx"]
+atlas = ExtResource("5_7w0nd")
+region = Rect2(240, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ho84"]
+atlas = ExtResource("5_7w0nd")
+region = Rect2(280, 0, 40, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcc4f"]
+atlas = ExtResource("5_7w0nd")
+region = Rect2(320, 0, 40, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vcc4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6c21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqhtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsml6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g4tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjm05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga7ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28etx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ho84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcc4f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7w0nd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jbrf8"]
+radius = 1.0
+height = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w0nd"]
+size = Vector2(62.5, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbrf8"]
+size = Vector2(576, 30)
+
+[node name="WormDrillLevel" type="Node2D"]
+script = ExtResource("1_hcfs8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+z_index = -10
+position = Vector2(576, 324)
+texture = ExtResource("1_qvr3i")
+
+[node name="WormStickAnim" type="AnimatedSprite2D" parent="."]
+position = Vector2(473, 470)
+sprite_frames = SubResource("SpriteFrames_6qx8f")
+frame_progress = 0.16390167
+offset = Vector2(0, -56)
+
+[node name="DragArea" type="Button" parent="WormStickAnim"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -33.0
+offset_top = -111.0
+offset_right = -25.0
+offset_bottom = -103.0
+scale = Vector2(7.2692857, 13.960008)
+metadata/_edit_use_anchors_ = true
+
+[node name="VisibilityArea" type="Sprite2D" parent="WormStickAnim"]
+texture = ExtResource("4_r5ifx")
+offset = Vector2(0, 89)
+
+[node name="VisAreaBody" type="Area2D" parent="WormStickAnim/VisibilityArea"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WormStickAnim/VisibilityArea/VisAreaBody"]
+position = Vector2(0, 89)
+polygon = PackedVector2Array(-2, -89, -49, 89, 49, 89, 2, -89)
+
+[node name="Worms" type="Node2D" parent="."]
+
+[node name="WormDot" type="MeshInstance2D" parent="Worms"]
+modulate = Color(0.16063213, 0.01592087, 0, 1)
+position = Vector2(263, 540)
+scale = Vector2(4, 4)
+mesh = SubResource("SphereMesh_r5ifx")
+metadata/detected = false
+
+[node name="Area2D" type="Area2D" parent="Worms/WormDot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worms/WormDot/Area2D"]
+shape = SubResource("CircleShape2D_r5ifx")
+
+[node name="WormMoveTimer" type="Timer" parent="."]
+
+[node name="DirtBursts" type="Node2D" parent="."]
+
+[node name="DirtBurst" type="AnimatedSprite2D" parent="DirtBursts"]
+position = Vector2(263, 540)
+sprite_frames = SubResource("SpriteFrames_vcc4f")
+frame = 8
+frame_progress = 1.0
+speed_scale = 2.0
+
+[node name="Worm" type="RigidBody2D" parent="DirtBursts/DirtBurst"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="DirtBursts/DirtBurst/Worm"]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(0, 12)
+scale = Vector2(2.197075, 13.650172)
+mesh = SubResource("CapsuleMesh_7w0nd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DirtBursts/DirtBurst/Worm"]
+position = Vector2(0, 11)
+shape = SubResource("CapsuleShape2D_jbrf8")
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+position = Vector2(-1, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(-31, 322)
+shape = SubResource("RectangleShape2D_7w0nd")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Borders"]
+position = Vector2(1162, 5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(20.75, 318)
+shape = SubResource("RectangleShape2D_7w0nd")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Borders"]
+position = Vector2(1218, -2)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3"]
+position = Vector2(-32.999985, 329.5)
+shape = SubResource("RectangleShape2D_7w0nd")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Borders"]
+position = Vector2(1262, 669)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4"]
+position = Vector2(-84.499985, 343.5)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_jbrf8")
+one_way_collision = true
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_jbrf8")
+volume_db = 24.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+ignore_rotation = false
+
+[connection signal="button_down" from="WormStickAnim/DragArea" to="." method="_on_drag_area_button_down"]
+[connection signal="button_up" from="WormStickAnim/DragArea" to="." method="_on_drag_area_button_up"]
+[connection signal="area_entered" from="WormStickAnim/VisibilityArea/VisAreaBody" to="." method="_on_vis_area_body_area_entered"]
+[connection signal="area_exited" from="WormStickAnim/VisibilityArea/VisAreaBody" to="." method="_on_vis_area_body_area_exited"]
+[connection signal="timeout" from="WormMoveTimer" to="." method="_on_worm_move_timer_timeout"]

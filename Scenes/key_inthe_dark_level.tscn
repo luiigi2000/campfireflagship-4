@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cfw8aat26k8fx"]
+[gd_scene load_steps=28 format=3 uid="uid://cfw8aat26k8fx"]
 
 [ext_resource type="Script" uid="uid://ni3r5jvfbqkg" path="res://Scenes/key_inthe_dark_level.gd" id="1_7rcke"]
 [ext_resource type="Texture2D" uid="uid://cg0bqqbohc5em" path="res://Mouse/whitehandmove.png" id="2_fgrsr"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pn5pm"]
 size = Vector2(50.324993, 59.948364)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fgrsr"]
+light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fgrsr"]
 atlas = ExtResource("4_fgrsr")
@@ -171,12 +174,12 @@ texture = ExtResource("2_fgrsr")
 position = Vector2(-0.49338531, -3.0517578e-05)
 shape = SubResource("RectangleShape2D_pn5pm")
 
-[node name="RadarLayer" type="CanvasLayer" parent="Keys/Key1"]
-
-[node name="Radar" type="AnimatedSprite2D" parent="Keys/Key1/RadarLayer"]
-position = Vector2(259, 249.99998)
-scale = Vector2(2.5, 2.463)
+[node name="Radar" type="AnimatedSprite2D" parent="Keys/Key1"]
+material = SubResource("CanvasItemMaterial_fgrsr")
+position = Vector2(1.9073486e-05, -0.0001373291)
+scale = Vector2(12.334556, 12.304402)
 sprite_frames = SubResource("SpriteFrames_8vayv")
+frame = 17
 frame_progress = 1.0
 speed_scale = 1.7
 
@@ -197,9 +200,14 @@ shape = SubResource("CircleShape2D_fgrsr")
 color = Color(0, 0, 0, 1)
 
 [node name="VisibleLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="EmmitRadars" type="Timer" parent="."]
-wait_time = 25.0
+wait_time = 10.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+ignore_rotation = false
 
 [connection signal="body_entered" from="Light/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="EmmitRadars" to="." method="_on_emmit_radars_timeout"]
