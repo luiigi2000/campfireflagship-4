@@ -40,7 +40,6 @@ func spawn_items():
 func _on_emmit_radars_timeout() -> void:
 	for key in $Keys.get_children():
 		var radar = key.get_child(2)
-		$CanvasModulate.remove_child(radar)
 		radar.play()
 	radar_timer.start()
 	await get_tree().create_timer(2).timeout

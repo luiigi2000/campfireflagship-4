@@ -10,7 +10,6 @@ func _ready() -> void:
 	hover_to_functions()
 	assign_note_sequence()
 	
-
 func hover_to_functions():
 	for button in get_tree().get_nodes_in_group("Buttons"):
 		button.connect("mouse_entered", Callable(self, "_on_button_hover"))

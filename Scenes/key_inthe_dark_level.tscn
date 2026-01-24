@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://cfw8aat26k8fx"]
 
-[ext_resource type="Script" uid="uid://ni3r5jvfbqkg" path="res://Scenes/key_inthe_dark_level.gd" id="1_7rcke"]
+[ext_resource type="Script" uid="uid://ni3r5jvfbqkg" path="res://Scripts/key_inthe_dark_level.gd" id="1_7rcke"]
 [ext_resource type="Texture2D" uid="uid://cg0bqqbohc5em" path="res://Mouse/whitehandmove.png" id="2_fgrsr"]
 [ext_resource type="Texture2D" uid="uid://bl4mpydldle31" path="res://images/LevelImages/2d_lights_and_shadows_neutral_point_light.webp" id="2_pn5pm"]
 [ext_resource type="Texture2D" uid="uid://wvxdjoos3hr8" path="res://images/LevelImages/radar-Sheet.png" id="4_fgrsr"]

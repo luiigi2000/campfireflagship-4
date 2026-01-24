@@ -1,7 +1,7 @@
 extends Node2D
 #ADD ANOTHER PARAMETER TO LEVEL SELECT AND CHANGE THE LEVEL THERE INSTEAD, ALSO ADD A NEXT LEVEL SCREEN
 enum level {level_select,next_level,level1,level2,level3,level4,level5,level6}
-@onready var state = level.level4
+@onready var state = level.level_select
 var levels_owned = [level.keys()[level.level1]]
 var level_child
 # Called when the node enters the scene tree for the first time.
@@ -34,6 +34,8 @@ func change_level(reset_scene = false):
 		level_child = preload("res://Scenes/key_inthe_dark_level.tscn").instantiate()
 	elif state == level.level5:
 		level_child = preload("res://Scenes/worm_drill_level.tscn").instantiate()
+	elif state == level.level6:
+		level_child = preload("res://Scenes/mow_the_lawn.tscn").instantiate()
 	add_child(level_child)
 	display_level_info()
 	
@@ -47,6 +49,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.is_action_pressed("open_level_selector"):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if Input.is_key_pressed(KEY_P):
+			levels_owned = [level.keys()[level.level1],level.keys()[level.level2],level.keys()[level.level3],level.keys()[level.level4],level.keys()[level.level5],level.keys()[level.level6]]
 	if event is InputEventMouseButton  and event.pressed:
 		if state == level.level2:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -76,4 +80,5 @@ func display_level_info(custom_info = null, parent = null):
 	var tween = get_tree().create_tween()
 	tween.tween_property(label, "modulate:a", 0.0, .5)
 	await tween.finished
-	level_info_scene.queue_free()
+	if is_instance_valid(level_info_scene):
+		level_info_scene.queue_free()

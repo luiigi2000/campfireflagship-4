@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://db3nsssnyqtso"]
 
-[ext_resource type="Script" uid="uid://bovmt7so7oc5w" path="res://Scenes/worm_drill_level.gd" id="1_hcfs8"]
+[ext_resource type="Script" uid="uid://bovmt7so7oc5w" path="res://Scripts/worm_drill_level.gd" id="1_hcfs8"]
 [ext_resource type="Texture2D" uid="uid://cmctxtwfqir70" path="res://images/Background/background.png" id="1_qvr3i"]
 [ext_resource type="Texture2D" uid="uid://d2nn4prgp5ald" path="res://images/LevelImages/WormLevel/wormstick-Sheet.png" id="2_hcfs8"]
 [ext_resource type="Texture2D" uid="uid://b0jein08k0tbh" path="res://images/LevelImages/WormLevel/wormview.png" id="4_r5ifx"]
