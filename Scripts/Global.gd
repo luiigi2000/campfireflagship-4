@@ -1,9 +1,10 @@
 extends Node2D
 #ADD ANOTHER PARAMETER TO LEVEL SELECT AND CHANGE THE LEVEL THERE INSTEAD, ALSO ADD A NEXT LEVEL SCREEN
-enum level {level_select,next_level,level1,level2,level3,level4,level5,level6}
-@onready var state = level.level_select
+enum level {level_select,next_level,level1,level2,level3,level4,level5,level6, level7}
+@onready var state = level.level7
 var levels_owned = [level.keys()[level.level1]]
 var level_child
+var level_info_label = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(preload("res://Mouse/whitehandmove.png"))
@@ -36,6 +37,8 @@ func change_level(reset_scene = false):
 		level_child = preload("res://Scenes/worm_drill_level.tscn").instantiate()
 	elif state == level.level6:
 		level_child = preload("res://Scenes/mow_the_lawn.tscn").instantiate()
+	elif state == level.level7:
+		level_child = preload("res://Scenes/boss_fight.tscn").instantiate()
 	add_child(level_child)
 	display_level_info()
 	
@@ -59,6 +62,7 @@ func _input(event: InputEvent) -> void:
 			
 func display_level_info(custom_info = null, parent = null):
 	var level_info_scene = preload("res://Scenes/level_info.tscn").instantiate()
+	level_info_label.append(level_info_scene)
 	var label = level_info_scene.get_child(0)
 	if custom_info != null:
 		label.text = custom_info
@@ -67,18 +71,21 @@ func display_level_info(custom_info = null, parent = null):
 	elif state == level.level2:
 		label.text = "PRESS SPACE NOW AHHHHHHHH"
 	elif state == level.level3:
-		label.text = "Are those... EVIL SHOOTING HANDS"
+		label.text = "Are those... EVIL SHOOTING HANDS!?!?"
 	elif state == level.level4:
-		label.text = "Can you find all 5 keys?"
+		label.text = "Can you find all 5 keys? Click to move."
 	elif state == level.level5:
-		label.text = "Catch all the worms by moving and using the grunting stick."
+		label.text = "Catch all the worms by moving the mouse side to side and dragging the stick to position."
+	elif state == level.level6:
+		label.text = "Mow all the grass to win.  A and D to turn. Sp sp sp... Click the cloud."
 	if parent == null:
 		add_child(level_info_scene)
 	else:
 		parent.add_child(level_info_scene)
 	await get_tree().create_timer(2.5).timeout
-	var tween = get_tree().create_tween()
-	tween.tween_property(label, "modulate:a", 0.0, .5)
-	await tween.finished
+	if is_instance_valid(label):
+		var tween = get_tree().create_tween()
+		tween.tween_property(label, "modulate:a", 0.0, .5)
+		await tween.finished
 	if is_instance_valid(level_info_scene):
 		level_info_scene.queue_free()

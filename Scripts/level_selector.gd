@@ -10,6 +10,10 @@ func _ready() -> void:
 			button.get_node("Lock").visible = false
 		else:
 			button.get_node("Lock").visible = true
+	for label_to_delete in Global.level_info_label:
+		if is_instance_valid(label_to_delete):
+			label_to_delete.visible = false
+	Global.level_info_label.clear()
 
 	
 func _level_selected(button):
