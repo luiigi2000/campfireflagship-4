@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4rejpo6elsb4"]
+
+[ext_resource type="Script" uid="uid://ccd7pvah5onft" path="res://Scripts/end_screen.gd" id="1_f2mtv"]
+
+[node name="End Screen" type="Node2D"]
+script = ExtResource("1_f2mtv")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 576.0
+offset_right = 616.0
+offset_bottom = 40.0
+
+[node name="TimeCompletedLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -278.5
+offset_right = 278.5
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "You Beat The Game in: "

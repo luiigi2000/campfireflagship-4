@@ -130,7 +130,7 @@ func detect_worms_via_raycast():
 func spawn_worms():
 	for i in range(4):
 		var worm_clone = $Worms/WormDot.duplicate()
-		worm_clone.position = Vector2(randf_range(0,get_viewport_rect().size.x),randf_range(473,get_viewport_rect().size.y))
+		worm_clone.position = Vector2(randf_range(0,get_viewport_rect().size.x),randf_range(483,get_viewport_rect().size.y))
 		all_worms.append(worm_clone)
 		$Worms.add_child(worm_clone)
 		

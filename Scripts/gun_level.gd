@@ -4,7 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 var guns_despawned = 0
 var all_guns_have_spawned = false
-@export var total_guns = 25
+@export var total_guns = 37
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN

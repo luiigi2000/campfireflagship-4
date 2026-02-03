@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=3 uid="uid://0gjyh76mi7ko"]
 
-[ext_resource type="Script" uid="uid://w62mdwe4hl8j" path="res://Scenes/mow_the_lawn.gd" id="1_8wv3x"]
+[ext_resource type="Script" uid="uid://w62mdwe4hl8j" path="res://Scripts/mow_the_lawn.gd" id="1_8wv3x"]
 [ext_resource type="Texture2D" uid="uid://c8w4c7pv5wefp" path="res://images/LevelImages/MowerLevel/lawnmower-Sheet.png" id="2_8wv3x"]
 [ext_resource type="Texture2D" uid="uid://du7q6p8hgflmv" path="res://images/LevelImages/MowerLevel/dirtburstmole-Sheet.png" id="3_eapl0"]
 [ext_resource type="Texture2D" uid="uid://dt4kpfwjk2e63" path="res://images/LevelImages/MowerLevel/cloud-Sheet.png" id="4_f5bap"]

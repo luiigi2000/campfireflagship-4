@@ -1,10 +1,11 @@
 extends Node2D
 #ADD ANOTHER PARAMETER TO LEVEL SELECT AND CHANGE THE LEVEL THERE INSTEAD, ALSO ADD A NEXT LEVEL SCREEN
-enum level {level_select,next_level,level1,level2,level3,level4,level5,level6, level7}
-@onready var state = level.level7
+enum level {start_screen, level_select,next_level,level1,level2,level3,level4,level5,level6, end_screen}
+@onready var state = level.start_screen
 var levels_owned = [level.keys()[level.level1]]
 var level_child
 var level_info_label = []
+var recorded_time := 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(preload("res://Mouse/whitehandmove.png"))
@@ -22,7 +23,9 @@ func _physics_process(_delta: float) -> void:
 func change_level(reset_scene = false):
 	if is_instance_valid(level_child):
 		level_child.queue_free()	
-	if state == level.level_select:
+	if state == level.start_screen:
+		level_child = preload("res://Scenes/start_screen.tscn").instantiate()
+	elif state == level.level_select:
 		level_child = preload("res://Scenes/level_selector.tscn").instantiate()
 	elif state == level.level1:
 		level_child = preload("res://Scenes/pianolevel.tscn").instantiate()
@@ -37,8 +40,8 @@ func change_level(reset_scene = false):
 		level_child = preload("res://Scenes/worm_drill_level.tscn").instantiate()
 	elif state == level.level6:
 		level_child = preload("res://Scenes/mow_the_lawn.tscn").instantiate()
-	elif state == level.level7:
-		level_child = preload("res://Scenes/boss_fight.tscn").instantiate()
+	elif state == level.end_screen:
+		level_child = preload("res://Scenes/end_screen.tscn").instantiate()
 	add_child(level_child)
 	display_level_info()
 	

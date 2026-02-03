@@ -152,7 +152,7 @@ animations = [{
 [node name="KeyIntheDarkLevel" type="Node2D"]
 scale = Vector2(1.0134131, 1.0008613)
 script = ExtResource("1_7rcke")
-total_keys = 4
+total_keys = 10
 
 [node name="BackGround" type="MeshInstance2D" parent="."]
 modulate = Color(0.21230483, 0.21230483, 0.21230483, 1)
