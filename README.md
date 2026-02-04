@@ -1,4 +1,4 @@
-<b>Starting up the game:<b/>
+Starting up the game:
 
 --> Make sure the screen is at the right size (no grey box around the screen).
 
