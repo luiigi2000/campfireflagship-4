@@ -41,5 +41,5 @@ Worm Grunting 101 crash course. First, you want to click and drag the t shaped s
 
 Level 6:
 
-Your goal is to mow the entire lawn, simple enough? Just make sure not to hit those moles okay? To dodge those pesky moles, use a/d or left/right to change the direction of the lawn mower. Clear skies might not last long so make sure to click/punch the cloud when it starts to look storm; it makes the clown happy for some reason, weird... Don't do it early though, no one likes to get hit when they are happy, don't be mean. >:(.
+Your goal is to mow the entire lawn, simple enough? Just make sure not to hit those moles okay? To dodge those pesky moles, use a/d or left/right to change the direction of the lawn mower. Clear skies might not last long so make sure to click/punch the cloud when it starts to look stormy; it makes the clown happy for some reason, weird... Don't do it early though, no one likes to get hit when they are happy, don't be mean. >:(.
 <img width="1142" height="644" alt="image" src="https://github.com/user-attachments/assets/e15c227a-a6fa-424f-bfb3-eed112c5a3ba" />
