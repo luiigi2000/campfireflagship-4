@@ -13,7 +13,6 @@ Level 1:
 Attempt to play Fur Elise by clicking on the 6 notes (campfire flagship icons) in order.
 		p	<img width="1142" height="645" alt="image" src="https://github.com/user-attachments/assets/670714ee-8280-452b-90d2-59c79b403f8e" />
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Level 2:
 
