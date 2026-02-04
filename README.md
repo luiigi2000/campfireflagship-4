@@ -6,6 +6,8 @@ Starting up the game:
 
 --> Press play... its right there... seriously press it. The play button yearns for you to touch it. Woah... Maybe don't press the play button. Ykw, press it. I . . DARE . . YOU.
 
+--> Press TAB to go to the level selection screen. Secret: press p and then tab to unlock all the levels (not part of the game but if you want to easily attempt all levels).
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Level 1:
