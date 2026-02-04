@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c28ktb5xafskg" path="res://Scripts/geodashcharacter.gd" id="1_5ijq5"]
 [ext_resource type="Texture2D" uid="uid://cg0bqqbohc5em" path="res://Mouse/whitehandmove.png" id="2_b104m"]
-[ext_resource type="Texture2D" uid="uid://dt6xgq8w3vtlb" path="res://icon.svg" id="3_sqtdl"]
+[ext_resource type="Texture2D" uid="uid://cbfql0j13inf0" path="res://images/LevelImages/bullet.png" id="3_5ijq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_js6hb"]
 size = Vector2(56, 67)
@@ -39,7 +39,8 @@ position = Vector2(1220, 324)
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Key"]
-texture = ExtResource("3_sqtdl")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_5ijq5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
 scale = Vector2(6.4, 6.5999994)

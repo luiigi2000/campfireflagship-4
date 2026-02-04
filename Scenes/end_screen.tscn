@@ -23,3 +23,14 @@ offset_bottom = 69.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "You Beat The Game in: "
+
+[node name="BackButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -100.0
+offset_top = 224.0
+offset_right = 95.0
+offset_bottom = 343.0
+theme_override_font_sizes/font_size = 46
+text = "Back"
+
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

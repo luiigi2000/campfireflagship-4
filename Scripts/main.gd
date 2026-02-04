@@ -8,5 +8,6 @@ func _ready() -> void:
 	
 
 func _on_game_time_timeout() -> void:
-	Global.recorded_time += 1
-	game_timer.start()
+	if not Global.completed_before:
+		Global.recorded_time += 1
+		game_timer.start()

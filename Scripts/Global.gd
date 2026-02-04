@@ -6,6 +6,7 @@ var levels_owned = [level.keys()[level.level1]]
 var level_child
 var level_info_label = []
 var recorded_time := 0.0
+var completed_before := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(preload("res://Mouse/whitehandmove.png"))
@@ -40,8 +41,11 @@ func change_level(reset_scene = false):
 		level_child = preload("res://Scenes/worm_drill_level.tscn").instantiate()
 	elif state == level.level6:
 		level_child = preload("res://Scenes/mow_the_lawn.tscn").instantiate()
-	elif state == level.end_screen:
+	elif state == level.end_screen and not completed_before:
+		completed_before = true
 		level_child = preload("res://Scenes/end_screen.tscn").instantiate()
+	else:
+		level_child = preload("res://Scenes/level_selector.tscn").instantiate()
 	add_child(level_child)
 	display_level_info()
 	
@@ -76,9 +80,9 @@ func display_level_info(custom_info = null, parent = null):
 	elif state == level.level3:
 		label.text = "Are those... EVIL SHOOTING HANDS!?!?"
 	elif state == level.level4:
-		label.text = "Can you find all 5 keys? Click to move."
+		label.text = "Can you find all 10 keys? Click to move."
 	elif state == level.level5:
-		label.text = "Catch all the worms by moving the mouse side to side and dragging the stick to position."
+		label.text = "Catch all the worms by dragging the stick to position by moving the mouse side to side."
 	elif state == level.level6:
 		label.text = "Mow all the grass to win.  A and D to turn. Sp sp sp... Click the cloud."
 	if parent == null:

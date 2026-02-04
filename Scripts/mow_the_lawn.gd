@@ -141,5 +141,6 @@ func check_win_condition():
 	for dirt in dirt_children:
 		if dirt.visible == false:
 			return
-	Global.level_cleared()
+	Global.state += 1
+	Global.change_level()
 		

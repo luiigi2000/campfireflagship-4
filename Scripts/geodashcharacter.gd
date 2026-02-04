@@ -10,7 +10,7 @@ func _ready() -> void:
 	get_tree().paused = false
 	print("BEGGINING")
 	$"../SpawnWallTimer".start()
-	await get_tree().create_timer(15).timeout
+	await get_tree().create_timer(30).timeout
 	key_spawned_debounce = true
 	
 	
