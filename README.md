@@ -1,11 +1,11 @@
 Starting up the game:
 
 <ul>
-	<l>Make sure the screen is at the right size (no grey box around the screen).</l>
+	<li>Make sure the screen is at the right size (no grey box around the screen).</li>
 
-	<l>This game requires AUDIO.<l/>
+	<li>This game requires AUDIO.<l/>
 
-	<l>Press play... its right there... seriously press it. The play button yearns for you to touch it. Woah... Maybe don't press the play button. Ykw, press it. I . . DARE . . YOU.<l/>
+	<li>Press play... its right there... seriously press it. The play button yearns for you to touch it. Woah... Maybe don't press the play button. Ykw, press it. I . . DARE . . YOU.<li/>
 
 </ul>
 
